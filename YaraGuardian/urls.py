@@ -41,12 +41,12 @@ urlpatterns = [url(r'^$',
                    include('social_django.urls',
                    namespace='social')),
 
-               url(r'^reset/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
-                   auth_views.password_reset_confirm, {'template_name': 'prelogin/ResetPassword.html'},
+               url(r'^reset/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,32})/$',
+                   auth_views.PasswordResetConfirmView.as_view(), {'template_name': 'prelogin/ResetPassword.html'},
                    name='password_reset_confirm'),
 
                url(r'^reset/done/$',
-                   auth_views.password_reset_complete, {'template_name': 'prelogin/ResetPasswordSuccess.html'},
+                   auth_views.PasswordResetCompleteView.as_view(), {'template_name': 'prelogin/ResetPasswordSuccess.html'},
                    name='password_reset_complete'),
 
 ]
