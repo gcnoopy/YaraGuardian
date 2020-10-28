@@ -52,7 +52,19 @@ Installation and Configuration Instructions (Development environment)
 
 3. Activate python environment
     * pipenv shell
-
+3.1. Install requirement python3 lib
+    * python3 -m pip install django
+    * python3 -m pip install unipath
+    * python3 -m pip install psycopg2
+    * python3 -m pip install djangorestframework
+    * python3 -m pip install django-angular
+    * python3 -m pip install drfdocs
+    * python3 -m pip install plyara
+    * python3 -m pip install chardet
+    * python3 -m pip install django_filter
+    * python3 -m pip install social-auth-app-django
+    * python3 -m pip install whitenoise
+    
 
 4. Use the Django manage.py to create initial tables and superuser
     * python manage.py migrate
