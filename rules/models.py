@@ -3,7 +3,7 @@ from django.conf import settings
 from django.contrib.postgres.fields import ArrayField, HStoreField, JSONField
 
 from django.contrib.auth.models import Group
-from plyara import Plyara
+from plyara import Plyara, utils
 
 from .managers import YaraRuleManager, YaraRuleCommentManager
 
@@ -77,7 +77,7 @@ class YaraRule(models.Model):
         raw_rule['condition_terms'] = self.condition
         raw_rule['scopes'] = self.scopes
 
-        formatted_rule = Plyara.rebuild_yara_rule(raw_rule)
+        formatted_rule = utils.rebuild_yara_rule(raw_rule)
         return formatted_rule
 
     def __str__(self):
